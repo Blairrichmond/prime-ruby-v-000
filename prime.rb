@@ -1,9 +1,9 @@
 def prime?(num)
   range = (1...num + 1)
   div = []
-  return true if num < 2
+  return false if num < 2
   range.each do |x|
-    div.push(x % 1 == 0)
+    div.push(x if num % x == 0)
   end
   return div.all? {|d| d == 1 || d == num}
 end
